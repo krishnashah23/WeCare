@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WeCare</title>
+        {% load static %}
+        <link rel="icon" href="{% static 'home/images/logo.png' %}" type="image/icon type">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <style>
+          .dsearch{
+            margin: 0%;
+            background-color:#ccffff ;
+          }
+          body{
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            }
+            .search-container {
+            margin: 0%;
+            padding: 0%;
+            }
+
+            .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            background-color: black;
+            }
+            footer {
+            background-color: #FCFDFE;
+            margin: 0%;
+            }
+
+            .well{
+            background-color: cyan;
+            }
+
+            .symptom{
+            margin: 0%;
+            background-color: #FCFDFE;
+            }
+            .symptom h1{
+            color: #16AF5F;
+            font: outline;
+            }
+            .symptom button{
+            font-size: 100%;
+            height: 50%;
+            color:white;
+            }
+            .login{
+            margin: 0%;
+            background-color:#BFDBF1;
+            }
+            .login h1{
+            font: outline;
+            color:#004AAD;
+            }
+            .login button{
+            font-size: 100%;
+            height: 50%;
+            color:white;
+            }
+
+                    </style>
+      </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <!--<li class="active"><img src="logo.png" width="10%" height="10%"></li>-->
+                    <li class="active"><a href="/home/">Home</a></li>
+                    <li class="active"><a href="/home/news/">News</a></li>
+                    <li class="active"><a href="/FAQ/getquestioninfo/">FAQ's</a></li>
+                    <li class="active"><a href="/covid19Data/getoption/">Corona Virus Updates</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/registration/getregsdetails/">Register</a></li>
+                    <li class="active"><a href="/logintosite/login/">Sign In</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav> 
+          <div>
+              <img  class="img-fluid" src="{% static 'home/images/home.png' %}" width="100%">
+          </div>
+          <div class="text-center">
+            <div class="symptom">
+                    <h1><b><i>Want to know what you are suffering from?</i></b></h1></br>
+                    <img src="{% static 'home/images/check.png' %}" class="img-fluid"><br>
+                    <h3 style="color: #55AB7F;">Our trusted symptom checker is written and reviewed by well know physicans and medicine practicioners.</br>
+                    Find a possible diagnosis by entering your symptoms and answering some simple questions.</h3><br>
+                    <a href="/home/gotosearch/"><button type="button" class="btn btn-success active" style="width: 50%;">GO TO OUR SYMPTOM CHECKER</button></a><br><br><br>
+            </div>
+          </div>
+          <div class="text-center dsearch" style="background-color: #BFDBF1;">
+              <img src="{%static 'home/images/search.png' %}" class="img-fluid" style="height: 250px; width: 250px;">
+              <h1 style="color:	 #004d4d"><b><i>Want to know about a disease?</i></b></h1>
+              <h3 style="color:  #009999">Learn more about a disease from our large bank of information.<br>
+              The data is written and reviewed by well known medicine practicioners and physicans.</h3><br>
+              <a href="/Diseases/homesearch/"><button type="button" class="btn btn-primary active" style="width: 50%; font-size: 18px;">SEARCH DISEASE</button></a><br><br>
+          </div>
+          <div class="text-center">
+            <div>
+              <img src="{% static 'home/images/hospital.png' %}" class="img-fluid" style="height:200px; width:200px;"><br>
+            </div>
+            <div class="symptom col-sm-6">
+                    <h1><b><i>Find a hospital near you!</i></b></h1></br>
+                    <h3 style="color: #55AB7F;">Enter a location and find all the hospitals located in that area.</h3><br>
+                    <form action="/home/hospitalsearch" method="GET">
+                      <input type="text" name="search" placeholder="Enter Location" style="width:400px; height:40px; padding:0px; margin: 0px; display: inline;">
+                      <button type="submit" style="background-color:#16AF5F; height:40px; padding:0px; margin: 0px; display: inline; width:200px">Find Hospitals</button>
+                    </form>
+                    <br><br><br>
+            </div>
+            <div class="col-sm-6 symptom">
+                  <h1><b><i>Find a Hospital near you!</i></b></h1></br>
+                  <h3 style="color: #55AB7F;">Find the hospital which is closest to your current location.</h3><br>
+                  <form action="/home/hospitalsearchnearest" method="GET">
+                    <button type="submit" style="background-color:#16AF5F; height:40px; padding:0px; margin: 0px; display: inline; width:400px">Find Hospitals</button>
+                  </form>
+                  <br><br><br>
+            </div>
+          </div>
+          <div class="text-center login">
+              <div>
+                <br><img src="{% static 'home/images/pharmacy.png' %}" class="img-fluid" style="height:200px; width:200px;"><br>
+              </div>
+              <div class="col-sm-6 login">
+                    </br><h1><b><i>Find a Pharmacy in an area</i></b></h1></br>
+                    <h3 style="color: #3A86B5;">Enter a location and find all the Pharmacy located in that area.</h3><br>
+                    <form action="/home/pharmacysearch" method="GET">
+                      <input type="text" name="search" placeholder="Enter Location" style="width:400px; height:40px; padding:0px; margin: 0px; display: inline;">
+                      <button type="submit" style="background-color:#004AAD; height:40px; padding:0px; margin: 0px; display: inline; width:200px">Find Pharmacy</button>
+                    </form>
+                    <br><br><br>
+              </div>
+              <div class="col-sm-6 login">
+                </br><h1><b><i>Find a Pharmacy near you!</i></b></h1></br>
+                <h3 style="color: #3A86B5;">Find the pharmacy which is closest to your current location.</h3><br>
+                <form action="/home/pharmacysearchnearest" method="GET">
+                  <button type="submit" style="background-color:#004AAD; height:40px; padding:0px; margin: 0px; display: inline; width:400px">Find Pharmacies</button>
+                </form>
+                <br><br><br>
+              </div>
+          </div>
+            <div class="text-center symptom">
+                <img src="{% static 'home/images/health.png' %}" class="img-fluid" height="18%" width="18%">
+                <h1><b><i style="color:#004AAD;">Are you a medical expert?</span></i></b></h1>
+                <h3 style="color:#3A86B5;">Help us make our data rich.<br> Join the We Care family to help others.</h3><br>
+                <a href="/logintosite/login/"><button type="button" class="btn  btn-primary active" style="width: 20%;">Login</button></a>
+                <a href="/registration/getregsdetails/"><button type="button" class="btn btn-primary active" style="width: 20%;">Register</button></a><br><br>
+            </div>
+          </div>
+          <footer  class="container-fluid text-center" style="background-color:#EDEDED">
+            <span style="font-size: 18px">
+                <h2 style="color: #55AB7F;"><i><b>Find Us On</b></i></h2>
+                  <br><i class="fa fa-facebook-official" style="font-size:44px; color:blue"></i>&nbsp;&nbsp;
+                  <i class="fa fa-instagram" style="font-size:44px; color:magenta"></i>&nbsp;&nbsp;
+                  <i class="fa fa-twitter-square" style="font-size:44px; color:darkblue"></i><br><br>
+            </span>
+          </footer>
+    </body>
+</html>
